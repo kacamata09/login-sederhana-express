@@ -18,6 +18,9 @@ module.exports = {
                         // } else {
                         //     resp.send('password yang anda masukkan salah')
                         // }
+                        requ.session.loggedin = true;
+                        requ.session.userid = rows[0].user_id;
+                        requ.session.username = rows[0].user_name;
                         resp.send('selamat anda berhasil login')
                 } else {
                     resp.send('email atau password yang anda masukkan salah')
