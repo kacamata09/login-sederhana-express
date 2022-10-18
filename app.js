@@ -2,8 +2,9 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const koneksi = require('./config/database')
 
-// router register
+// router
 const router_register = require('./routes/router-register')
+const router_login = require('./routes/router-login')
 
 
 const app = express()
@@ -13,6 +14,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.set('view engine', 'ejs')
 
 app.use(router_register)
+app.use(router_login)
 
 
 
